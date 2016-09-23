@@ -8,7 +8,9 @@ RUN apt-get -y install php7.0-fpm php7.0-mcrypt php7.0-curl php7.0-cli php7.0-my
 RUN apt-get install -y supervisor
 RUN apt-get install -y vim
 RUN mkdir -p /var/log/supervisor
+RUN service php7.0-fpm start
 ADD supervisord.conf /etc/supervisord.conf
+
 
 EXPOSE 80
 EXPOSE 443
